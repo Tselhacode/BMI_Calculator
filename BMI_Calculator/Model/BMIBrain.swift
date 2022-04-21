@@ -21,41 +21,20 @@ struct BMIBrain {
         return bmi?.advice ?? "No Advice"
     }
     
-    func getColor() -> UIColor {
-        return bmi?.color ?? UIColor.white
+    func getImage() -> UIImage {
+        return bmi?.image ?? UIImage(named: "bg-img.jpg")!
     }
     
     
     mutating func calculateBMI(weight : Float, height : Float){
        let bmiValue =  weight/pow(height,2)
-        bmi = BMI(value: bmiValue, advice: "Eat more pies", color: UIColor.blue)
         if bmiValue < 18.5 {
-            bmi = BMI(value: bmiValue, advice: "Fit as a fiddle", color: UIColor.green)
+            bmi = BMI(value: bmiValue, advice: "Snack Away", image: UIImage(named: "underweight.jpg")!)
+        }else if bmiValue < 24.9 {
+            bmi = BMI(value: bmiValue, advice: "Fit as a fiddle", image: UIImage(named: "normal.jpg")!)
         }else {
-            bmi = BMI(value: bmiValue, advice: "Eat less pizzas", color: UIColor.red)
+            bmi = BMI(value: bmiValue, advice: "Adopt a healthier diet", image: UIImage(named: "overweight.jpg")!)
         }
     }
    
-   }
-    
-    
-//    func getBMI() -> String {
-//        if BMI != nil {
-//            let bmiRounded = String(format: "%.1f", BMI!)
-//            return bmiRounded
-//        }else{
-//            return "0.0"
-//        }
-//    }
-    
-//    func getBMI() -> String {
-//        if let safeBMI == BMI {
-//            let bmiRounded = String(format: "%.1f",safeBMI)
-//            return bmiRounded
-//        }else {
-//            return "0.0"
-//        }
-//    }
-    
-    //optional chaining - need to check if BMI exist before accessign its value
-    //
+}

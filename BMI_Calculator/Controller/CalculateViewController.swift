@@ -49,7 +49,7 @@ class CalculateViewController: UIViewController {
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.bmiValue = brainObj.getBMI()
             destinationVC.advice = brainObj.getAdvice()
-            destinationVC.color = brainObj.getColor()
+            destinationVC.img = brainObj.getImage()
         }
         
     }

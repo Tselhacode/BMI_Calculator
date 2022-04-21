@@ -11,10 +11,11 @@ class ResultViewController: UIViewController {
 
     var bmiValue : String?
     var advice : String?
-    var color : UIColor?
+    var img : UIImage?
     
     @IBOutlet weak var adviceLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var bgImgView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,7 @@ class ResultViewController: UIViewController {
     
         self.adviceLabel.text = advice
         
-        self.view.backgroundColor = color
+        self.bgImgView.image = img
 
         // Do any additional setup after loading the view.
     }
